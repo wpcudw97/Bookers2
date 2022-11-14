@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookeres2</title>
+    <link rel="stylesheet" href="/assets/application.css">
+  </head>
+
+  <body>
+    <h2>User info</h2>
+
+     <%= form_with model: @user do |f| %>
+
+    <p>Name</p>
+      <%= f.text_field :title %>
+    <p>Image</p>
+      <%= f.file_field :image, accept: "image/*" %>
+    <p>Introduction</p>
+      <%= f.text_area :body %>
+    <%= f.submit 'Update User' %>
+  <% end %>
+  </body>
+</html

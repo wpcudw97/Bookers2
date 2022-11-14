@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookeres2</title>
+    <link rel="stylesheet" href="/assets/application.css">
+  </head>
+
+  <body>
+    <% @users.each do |user| %>
+    <div>
+      <%= image_tag user.get_image %>
+      <p>投稿ユーザー画像：<%= image_tag 'sample-author1.jpg' %></p>
+      <p>ショップ名：<%= user.shop_name %></p>
+      <p>説明：<%= user.caption %></p>
+      <p>ユーザーネーム：<%= user.user.name %></p>
+    </div>
+    <% end %>
+  </body>
+</html

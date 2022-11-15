@@ -1,3 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+//
+.new-book-title,
+.new-book-body {
+  font-size: 16px;
+  font-weight: normal;
+
+}
+
+.form-control {
+  margin: 0 0 8px;
+}

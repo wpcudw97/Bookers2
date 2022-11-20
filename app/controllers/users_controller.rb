@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.all
+    @users = User.all
     @user = current_user
     @book = Book.new
   end
 
   def show
-    @books = Book.all
+    @books = Book.where(user_id:params[:id])
     @user = User.find(params[:id])
     @user.user_id = current_user.id
     @user = current_user
@@ -16,6 +16,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    user_id = params[:id].to_i
+    login_user_id = current_user.id
+    if(user_id != login_user_id)
+      redirect_to books_path
+    end
     @user = User.find(params[:id])
   end
 

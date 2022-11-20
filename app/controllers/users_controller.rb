@@ -10,18 +10,19 @@ class UsersController < ApplicationController
     @books = Book.where(user_id:params[:id])
     @user = User.find(params[:id])
     @user.user_id = current_user.id
-    @user = current_user
     @book = Book.new
     @user.save
   end
 
   def edit
+    @user = User.find(params[:id])
+    @user = current_user
     user_id = params[:id].to_i
     login_user_id = current_user.id
     if(user_id != login_user_id)
-      redirect_to books_path
+      redirect_to user_path(@user.id)
     end
-    @user = User.find(params[:id])
+
   end
 
   def update
